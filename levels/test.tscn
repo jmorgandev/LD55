@@ -24,6 +24,9 @@ projection = 1
 size = 10.0
 script = ExtResource("1_rc8no")
 
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
 [node name="world" type="Node3D" parent="."]
 
 [node name="Node3D" type="StaticBody3D" parent="world"]
