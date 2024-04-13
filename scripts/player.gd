@@ -10,6 +10,8 @@ var view_forward: Vector3
 var view_right: Vector3
 var view_forward_compensation: float = 90.0 / abs(rotation_degrees.x) * 0.8
 
+var selected_unit: Unit = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
     view_forward = transform.basis.z.normalized()
@@ -42,13 +44,19 @@ func _process(delta):
         view_movement = (view_forward * input_dir.y * view_forward_compensation) + (view_right * input_dir.x) * 10.0
         position += view_movement * delta
     
-func _process_selection():
-    pass
+func _process_selection(collider: Node3D):
+    if selected_unit != null:
+        selected_unit.select(false)
+    
+    if collider is Unit:
+        selected_unit = collider as Unit
+        selected_unit.select(true)
+    else:
+        selected_unit = null
     
 func _physics_process(delta):
     if raycast.enabled and is_selection_queued:
         is_selection_queued = false
         if raycast.is_colliding():
-            var collider := raycast.get_collider() as Node3D
-            print("found an object at ", collider.global_position)
+            _process_selection(raycast.get_collider() as Node3D)
         
