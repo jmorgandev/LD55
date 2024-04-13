@@ -1,0 +1,344 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvb0y5hetoj3j"]
+
+[ext_resource type="Texture2D" uid="uid://ksvmdct2ea7a" path="res://icon.svg" id="1_fe552"]
+[ext_resource type="Script" path="res://levels/player.gd" id="1_rc8no"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_afjnf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3jcb"]
+albedo_texture = ExtResource("1_fe552")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fo7kr"]
+points = PackedVector3Array(0.5, 0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1ik1o"]
+size = Vector3(0.6, 1, 0.6)
+
+[sub_resource type="Environment" id="Environment_8hc4a"]
+
+[node name="origin" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 10, 10, 10)
+projection = 1
+size = 10.0
+script = ExtResource("1_rc8no")
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="Node3D" type="StaticBody3D" parent="world"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, 0)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0, 0)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, 1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0, 1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="world/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0, -1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="world/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="world/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, -1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/Node3D"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_fo7kr")
+
+[node name="Node3D2" type="StaticBody3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, 0)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0, 0)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, 1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0, 1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="world/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0, -1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="world/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="world/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, -1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/Node3D2"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_fo7kr")
+
+[node name="Node3D3" type="StaticBody3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/Node3D3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/Node3D3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, 0)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/Node3D3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0, 0)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/Node3D3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/Node3D3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, 1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/Node3D3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0, 1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="world/Node3D3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0, -1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="world/Node3D3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="world/Node3D3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, -1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/Node3D3"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_fo7kr")
+
+[node name="Node3D4" type="StaticBody3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/Node3D4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/Node3D4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, 0)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/Node3D4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0, 0)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/Node3D4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/Node3D4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, 1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/Node3D4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0, 1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="world/Node3D4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0, -1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="world/Node3D4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="world/Node3D4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, -1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/Node3D4"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_fo7kr")
+
+[node name="Node3D5" type="StaticBody3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/Node3D5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/Node3D5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, 0)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/Node3D5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0, 0)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/Node3D5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/Node3D5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, 1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/Node3D5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0, 1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="world/Node3D5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0, -1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="world/Node3D5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="world/Node3D5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, -1)
+mesh = SubResource("QuadMesh_afjnf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3jcb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/Node3D5"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_fo7kr")
+
+[node name="Unit" type="Node3D" parent="."]
+
+[node name="mesh" type="MeshInstance3D" parent="Unit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_1ik1o")
+skeleton = NodePath("../..")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8hc4a")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.258593, -0.641334, 0.722371, 0.553542, 0.514472, 0.654913, -0.791657, 0.569219, 0.221966, 0, 0, 0)
