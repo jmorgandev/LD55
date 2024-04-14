@@ -5,6 +5,7 @@ var is_selection_queued := false
 
 var is_dragging := false
 const DRAG_SENSITVITY := 0.02
+const PAN_SPEED := 10.0
 
 var view_forward: Vector3
 var view_right: Vector3
@@ -37,12 +38,10 @@ func _unhandled_input(event: InputEvent):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-    var view_movement := Vector3.ZERO
-
     if not is_dragging:
         var input_dir := Input.get_vector("left", "right", "up", "down").normalized()
-        view_movement = (view_forward * input_dir.y * view_forward_compensation) + (view_right * input_dir.x) * 10.0
-        position += view_movement * delta
+        var view_move_dir = (view_forward * input_dir.y * view_forward_compensation) + (view_right * input_dir.x)
+        position += view_move_dir * PAN_SPEED * delta
     
 func _process_selection(collider: Node3D):
     if selected_unit != null:

@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh2by1bmg3dvf"]
+[gd_scene load_steps=4 format=3 uid="uid://odd8jk04pw74"]
 
-[ext_resource type="PackedScene" uid="uid://4xldk6l1d7kv" path="res://entities/player.tscn" id="1_3wcgj"]
+[ext_resource type="PackedScene" uid="uid://i661qio5md4s" path="res://entities/player.tscn" id="1_3wcgj"]
+[ext_resource type="PackedScene" uid="uid://dyha71l7vgvey" path="res://level_building/floor_tiles.tscn" id="2_d1unf"]
+[ext_resource type="MeshLibrary" uid="uid://cnnxwoh2fqxmx" path="res://level_building/wall_tile_library.tres" id="3_oha3h"]
 
 [node name="Origin" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_3wcgj")]
+transform = Transform3D(0.707107, -0.40558, 0.579228, 0, 0.819151, 0.573576, -0.707107, -0.40558, 0.579228, 10, 10, 10)
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="LevelMeshes" parent="World" instance=ExtResource("2_d1unf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+
+[node name="GridMap" type="GridMap" parent="World"]
+mesh_library = ExtResource("3_oha3h")
+cell_size = Vector3(1, 0.9, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(1, 0, 655363, 0, 0, 655360, 2, 0, 655360, 3, 0, 655361, 65535, 0, 1048577, 0, 65534, 6, 65536, 65533, 6, 196607, 65535, 1441792, 196607, 65534, 1441792, 196607, 65533, 1441792, 196607, 65532, 1441792, 196607, 0, 1048577)
+}
+metadata/_editor_floor_ = Vector3(0, 2, 0)
