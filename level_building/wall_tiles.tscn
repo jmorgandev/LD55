@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://bpngxens5npbn"]
 
-[ext_resource type="Material" uid="uid://5g5vbeokihsg" path="res://materials/stone_wall_material.tres" id="1_bdw0i"]
-[ext_resource type="Material" uid="uid://bclnmi1wijhx4" path="res://materials/wood_wall_material.tres" id="2_r6nti"]
+[ext_resource type="Material" uid="uid://5g5vbeokihsg" path="res://assets/materials/stone_wall_material.tres" id="1_bdw0i"]
+[ext_resource type="Material" uid="uid://bclnmi1wijhx4" path="res://assets/materials/wood_wall_material.tres" id="2_r6nti"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tekkn"]
 resource_name = "Material"

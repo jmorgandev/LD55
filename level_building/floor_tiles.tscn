@@ -1,83 +1,30 @@
-[gd_scene load_steps=16 format=3 uid="uid://dyha71l7vgvey"]
+[gd_scene load_steps=6 format=3 uid="uid://dyha71l7vgvey"]
 
-[ext_resource type="Texture2D" uid="uid://bii0v512ymm6y" path="res://assets/textures/grass64.png" id="1_f8bcx"]
-[ext_resource type="Texture2D" uid="uid://dd7l7qiccisx0" path="res://assets/textures/dustygrass.png" id="2_eelww"]
-[ext_resource type="Texture2D" uid="uid://puk066qme78i" path="res://assets/textures/dirt.png" id="3_d4qq3"]
-[ext_resource type="Texture2D" uid="uid://ymunmxxngb57" path="res://assets/textures/stone.png" id="4_m57bi"]
-[ext_resource type="Texture2D" uid="uid://dcm7xktrvr5y2" path="res://assets/textures/wood.png" id="5_brix3"]
-[ext_resource type="Texture2D" uid="uid://dka1eisgtxwn0" path="res://assets/textures/wood2.png" id="6_u5y4y"]
-[ext_resource type="Texture2D" uid="uid://cpijy75p8d7nu" path="res://assets/textures/wood3.png" id="7_67xbg"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ucxq"]
-shading_mode = 0
-albedo_texture = ExtResource("1_f8bcx")
-texture_filter = 0
+[ext_resource type="Material" uid="uid://dhyo60tqu3gdw" path="res://assets/materials/grass_material.tres" id="1_0gbsi"]
+[ext_resource type="Material" uid="uid://dbd3hrjgrycg5" path="res://assets/materials/dirtgrass_material.tres" id="2_36owf"]
+[ext_resource type="Material" uid="uid://bxvbkrsopw8w5" path="res://assets/materials/dirt_material.tres" id="3_d8xo7"]
+[ext_resource type="Material" uid="uid://knul1703l35h" path="res://assets/materials/stone_material.tres" id="4_lxmis"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_5vbob"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xwfpt"]
-shading_mode = 0
-albedo_texture = ExtResource("2_eelww")
-texture_filter = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1x53"]
-shading_mode = 0
-albedo_texture = ExtResource("3_d4qq3")
-texture_filter = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eaxgt"]
-shading_mode = 0
-albedo_texture = ExtResource("4_m57bi")
-texture_filter = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oje2g"]
-shading_mode = 0
-albedo_texture = ExtResource("5_brix3")
-texture_filter = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5ehr"]
-shading_mode = 0
-albedo_texture = ExtResource("6_u5y4y")
-texture_filter = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tk4y"]
-shading_mode = 0
-albedo_texture = ExtResource("7_67xbg")
-texture_filter = 0
 
 [node name="LevelMeshes" type="Node3D"]
 
 [node name="Grass" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_3ucxq")
+material_override = ExtResource("1_0gbsi")
 mesh = SubResource("QuadMesh_5vbob")
 
 [node name="DirtGrass" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, 0)
-material_override = SubResource("StandardMaterial3D_xwfpt")
 mesh = SubResource("QuadMesh_5vbob")
+surface_material_override/0 = ExtResource("2_36owf")
 
 [node name="Dirt" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2, 0, 0)
-material_override = SubResource("StandardMaterial3D_g1x53")
+material_override = ExtResource("3_d8xo7")
 mesh = SubResource("QuadMesh_5vbob")
 
 [node name="Stone" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 0, 0)
-material_override = SubResource("StandardMaterial3D_eaxgt")
 mesh = SubResource("QuadMesh_5vbob")
-
-[node name="Wood" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 1)
-material_override = SubResource("StandardMaterial3D_oje2g")
-mesh = SubResource("QuadMesh_5vbob")
-
-[node name="Wood2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, 1)
-material_override = SubResource("StandardMaterial3D_e5ehr")
-mesh = SubResource("QuadMesh_5vbob")
-
-[node name="Wood3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2, 0, 1)
-material_override = SubResource("StandardMaterial3D_4tk4y")
-mesh = SubResource("QuadMesh_5vbob")
+surface_material_override/0 = ExtResource("4_lxmis")
