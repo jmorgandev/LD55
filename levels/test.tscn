@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bvb0y5hetoj3j"]
 
 [ext_resource type="Texture2D" uid="uid://ksvmdct2ea7a" path="res://icon.svg" id="1_fe552"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_rc8no"]
+[ext_resource type="PackedScene" uid="uid://4xldk6l1d7kv" path="res://entities/player.tscn" id="1_n0mfs"]
 [ext_resource type="PackedScene" uid="uid://kd4dqxf1vdwu" path="res://entities/unit.tscn" id="3_h8lvv"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_afjnf"]
@@ -16,14 +16,7 @@ points = PackedVector3Array(0.5, 0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, -0.5,
 
 [node name="origin" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 10, 10, 10)
-projection = 1
-size = 10.0
-script = ExtResource("1_rc8no")
-
-[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="Player" parent="." instance=ExtResource("1_n0mfs")]
 
 [node name="world" type="Node3D" parent="."]
 
