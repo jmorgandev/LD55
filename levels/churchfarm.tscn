@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://euojllkycmv6"]
+
+[ext_resource type="Material" uid="uid://djfghxvwljxdp" path="res://assets/materials/map_grass_base.tres" id="1_es2t6"]
+[ext_resource type="MeshLibrary" uid="uid://drmxwvhu2jy1q" path="res://level_building/floor_tiles_library.tres" id="2_h5jee"]
+[ext_resource type="MeshLibrary" uid="uid://betwse8dqmcxd" path="res://level_building/wall_tiles_library.tres" id="3_00k8l"]
+[ext_resource type="PackedScene" uid="uid://i661qio5md4s" path="res://entities/player.tscn" id="4_k8216"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_2q6d6"]
+center_offset = Vector3(0.5, 0, 0.5)
+orientation = 1
+
+[sub_resource type="Environment" id="Environment_3d2f4"]
+ambient_light_source = 2
+ambient_light_color = Color(0.25098, 0.25098, 0.25098, 1)
+ambient_light_energy = 8.15
+fog_sky_affect = 0.271
+fog_height = 24.09
+
+[node name="ChurchFarm" type="Node"]
+
+[node name="MapBounds" type="MeshInstance3D" parent="."]
+transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 40, 0, -0.01, 0)
+material_override = ExtResource("1_es2t6")
+mesh = SubResource("QuadMesh_2q6d6")
+
+[node name="FloorMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_h5jee")
+cell_size = Vector3(1, 0.9, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(17, 17, 3, 17, 18, 3, 17, 19, 3, 17, 20, 3, 17, 21, 3, 18, 17, 3, 18, 18, 3, 18, 19, 3, 18, 20, 3, 18, 21, 3, 19, 17, 3, 19, 18, 3, 19, 19, 3, 19, 20, 3, 19, 21, 3, 20, 17, 3, 20, 18, 3, 20, 19, 3, 20, 20, 3, 20, 21, 3, 21, 17, 3, 21, 18, 3, 21, 19, 3, 21, 20, 3, 21, 21, 3, 22, 17, 3, 22, 18, 3, 22, 19, 3, 22, 20, 3, 22, 21, 3, 23, 17, 3, 23, 18, 3, 23, 19, 3, 23, 20, 3, 23, 21, 3, 24, 17, 3, 24, 18, 3, 24, 19, 3, 24, 20, 3, 24, 21, 3, 25, 18, 3, 25, 19, 3, 25, 20, 3, 26, 18, 3, 26, 19, 3, 26, 20, 3, 27, 18, 3, 27, 19, 3, 27, 20, 3)
+}
+
+[node name="WallMap" type="GridMap" parent="."]
+mesh_library = ExtResource("3_00k8l")
+cell_size = Vector3(1, 1.8, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(17, 17, 3, 17, 18, 1048580, 17, 20, 1048580, 17, 21, 1048579, 17, 19, 1048577, 18, 21, 655372, 20, 21, 655372, 22, 21, 655372, 24, 21, 655372, 18, 17, 12, 20, 17, 12, 22, 17, 12, 24, 17, 12, 25, 21, 1048577, 25, 17, 1048577, 25, 20, 655361, 26, 20, 655361, 25, 18, 1, 26, 18, 1, 27, 18, 1441795, 27, 20, 655363, 27, 19, 1441793, 23, 21, 655361, 21, 21, 655361, 19, 21, 655361, 19, 17, 1, 21, 17, 1, 23, 17, 1)
+}
+
+[node name="Player" parent="." instance=ExtResource("4_k8216")]
+transform = Transform3D(0.707107, -0.353553, 0.612373, 0, 0.866026, 0.499999, -0.707107, -0.353553, 0.612373, 20, 10, 20)
+far = 40.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.853478, 0.30342, -0.423688, -1.26298e-07, 0.81302, 0.582236, 0.521128, -0.496926, 0.693895, 0, 0, 0)
+light_energy = 0.25
+shadow_enabled = true
+directional_shadow_mode = 0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3d2f4")

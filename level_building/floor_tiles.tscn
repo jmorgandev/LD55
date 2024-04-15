@@ -6,25 +6,25 @@
 [ext_resource type="Material" uid="uid://dspaw6uwpo74j" path="res://assets/materials/stone_unlit_material.tres" id="4_bf4lb"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_5vbob"]
+orientation = 1
 
 [node name="LevelMeshes" type="Node3D"]
 
 [node name="Grass" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-material_override = ExtResource("1_0gbsi")
 mesh = SubResource("QuadMesh_5vbob")
+surface_material_override/0 = ExtResource("1_0gbsi")
 
 [node name="DirtGrass" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 mesh = SubResource("QuadMesh_5vbob")
 surface_material_override/0 = ExtResource("2_36owf")
 
 [node name="Dirt" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2, 0, 0)
-material_override = ExtResource("3_d8xo7")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 mesh = SubResource("QuadMesh_5vbob")
+surface_material_override/0 = ExtResource("3_d8xo7")
 
-[node name="Dirt2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 1)
+[node name="Stone" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 mesh = SubResource("QuadMesh_5vbob")
 surface_material_override/0 = ExtResource("4_bf4lb")

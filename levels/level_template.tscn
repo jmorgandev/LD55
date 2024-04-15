@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://kvyt6jvcvu0j"]
+
+[ext_resource type="Material" uid="uid://djfghxvwljxdp" path="res://assets/materials/map_grass_base.tres" id="1_iv1d4"]
+[ext_resource type="PackedScene" uid="uid://i661qio5md4s" path="res://entities/player.tscn" id="2_6qpc5"]
+[ext_resource type="MeshLibrary" uid="uid://drmxwvhu2jy1q" path="res://level_building/floor_tiles_library.tres" id="2_sujj7"]
+[ext_resource type="MeshLibrary" uid="uid://betwse8dqmcxd" path="res://level_building/wall_tiles_library.tres" id="3_sjr1o"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_2q6d6"]
+center_offset = Vector3(0.5, 0, 0.5)
+orientation = 1
+
+[node name="NewLevel" type="Node"]
+
+[node name="MapBounds" type="MeshInstance3D" parent="."]
+transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 40, 0, -0.01, 0)
+material_override = ExtResource("1_iv1d4")
+mesh = SubResource("QuadMesh_2q6d6")
+
+[node name="FloorMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_sujj7")
+cell_size = Vector3(1, 0.9, 1)
+cell_center_y = false
+
+[node name="WallMap" type="GridMap" parent="."]
+mesh_library = ExtResource("3_sjr1o")
+cell_size = Vector3(1, 1.8, 1)
+cell_center_y = false
+
+[node name="Player" parent="." instance=ExtResource("2_6qpc5")]
+transform = Transform3D(0.707107, -0.353553, 0.612373, 0, 0.866026, 0.5, -0.707107, -0.353553, 0.612373, 20, 10, 20)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.986524, -0.115696, 0.115696, -2.12883e-08, 0.707107, 0.707107, -0.163619, -0.697578, 0.697578, 0, 0, 0)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ksvmdct2ea7a" path="res://icon.svg" id="1_fe552"]
 [ext_resource type="PackedScene" uid="uid://i661qio5md4s" path="res://entities/player.tscn" id="1_n0mfs"]
-[ext_resource type="PackedScene" path="res://entities/unit.tscn" id="3_h8lvv"]
+[ext_resource type="PackedScene" uid="uid://kd4dqxf1vdwu" path="res://entities/unit.tscn" id="3_h8lvv"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_afjnf"]
 
