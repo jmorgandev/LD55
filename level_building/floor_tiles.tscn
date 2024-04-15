@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dyha71l7vgvey"]
 
-[ext_resource type="Material" uid="uid://dhyo60tqu3gdw" path="res://assets/materials/grass_material.tres" id="1_0gbsi"]
-[ext_resource type="Material" uid="uid://dbd3hrjgrycg5" path="res://assets/materials/dirtgrass_material.tres" id="2_36owf"]
-[ext_resource type="Material" uid="uid://bxvbkrsopw8w5" path="res://assets/materials/dirt_material.tres" id="3_d8xo7"]
-[ext_resource type="Material" uid="uid://knul1703l35h" path="res://assets/materials/stone_material.tres" id="4_lxmis"]
+[ext_resource type="Material" uid="uid://dhyo60tqu3gdw" path="res://assets/materials/grass_unlit_material.tres" id="1_0gbsi"]
+[ext_resource type="Material" uid="uid://dbd3hrjgrycg5" path="res://assets/materials/dirtgrass_unlit_material.tres" id="2_36owf"]
+[ext_resource type="Material" uid="uid://bxvbkrsopw8w5" path="res://assets/materials/dirt_unlit_material.tres" id="3_d8xo7"]
+[ext_resource type="Material" uid="uid://dspaw6uwpo74j" path="res://assets/materials/stone_unlit_material.tres" id="4_bf4lb"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_5vbob"]
 
@@ -24,7 +24,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2, 0, 
 material_override = ExtResource("3_d8xo7")
 mesh = SubResource("QuadMesh_5vbob")
 
-[node name="Stone" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 0, 0)
+[node name="Dirt2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 1)
 mesh = SubResource("QuadMesh_5vbob")
-surface_material_override/0 = ExtResource("4_lxmis")
+surface_material_override/0 = ExtResource("4_bf4lb")
