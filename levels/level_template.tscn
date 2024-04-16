@@ -31,3 +31,5 @@ transform = Transform3D(0.707107, -0.353553, 0.612373, 0, 0.866026, 0.5, -0.7071
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.986524, -0.115696, 0.115696, -2.12883e-08, 0.707107, 0.707107, -0.163619, -0.697578, 0.697578, 0, 0, 0)
+
+[node name="Generated" type="Node" parent="."]

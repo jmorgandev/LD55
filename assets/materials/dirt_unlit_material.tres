@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://puk066qme78i" path="res://assets/textures/dirt.png" id="1_25q0u"]
 
 [resource]
-shading_mode = 0
 albedo_texture = ExtResource("1_25q0u")
 uv1_world_triplanar = true
 texture_filter = 0

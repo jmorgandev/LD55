@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyha71l7vgvey"]
+[gd_scene load_steps=7 format=3 uid="uid://dyha71l7vgvey"]
 
 [ext_resource type="Material" uid="uid://dhyo60tqu3gdw" path="res://assets/materials/grass_unlit_material.tres" id="1_0gbsi"]
 [ext_resource type="Material" uid="uid://dbd3hrjgrycg5" path="res://assets/materials/dirtgrass_unlit_material.tres" id="2_36owf"]
 [ext_resource type="Material" uid="uid://bxvbkrsopw8w5" path="res://assets/materials/dirt_unlit_material.tres" id="3_d8xo7"]
 [ext_resource type="Material" uid="uid://dspaw6uwpo74j" path="res://assets/materials/stone_unlit_material.tres" id="4_bf4lb"]
+[ext_resource type="Material" uid="uid://df58g75u7s2vs" path="res://assets/materials/stone2.tres" id="5_m0cw8"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_5vbob"]
 orientation = 1
@@ -28,3 +29,8 @@ surface_material_override/0 = ExtResource("3_d8xo7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 mesh = SubResource("QuadMesh_5vbob")
 surface_material_override/0 = ExtResource("4_bf4lb")
+
+[node name="Stone2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+mesh = SubResource("QuadMesh_5vbob")
+surface_material_override/0 = ExtResource("5_m0cw8")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=46 format=3 uid="uid://bpngxens5npbn"]
+[gd_scene load_steps=47 format=3 uid="uid://bpngxens5npbn"]
 
 [ext_resource type="Material" uid="uid://5g5vbeokihsg" path="res://assets/materials/stone_material.tres" id="1_bdw0i"]
+[ext_resource type="Material" uid="uid://ccrbmyudlt7dd" path="res://assets/materials/stone_material_tile.tres" id="2_nec58"]
 [ext_resource type="Material" uid="uid://bclnmi1wijhx4" path="res://assets/materials/wood_material.tres" id="2_r6nti"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pux4"]
@@ -501,7 +502,7 @@ shape = SubResource("ConcavePolygonShape3D_o5nh3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0.5)
 mesh = SubResource("ArrayMesh_fcwe6")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("1_bdw0i")
+surface_material_override/0 = ExtResource("2_nec58")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall_Stone"]
 

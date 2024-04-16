@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dd7l7qiccisx0" path="res://assets/textures/dustygrass.png" id="1_06im3"]
 
 [resource]
-shading_mode = 0
 albedo_texture = ExtResource("1_06im3")
 uv1_world_triplanar = true
 texture_filter = 0
