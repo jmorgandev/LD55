@@ -1,9 +1,9 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://df58g75u7s2vs"]
 
-[ext_resource type="Texture2D" uid="uid://vn53y2i1fa4b" path="res://assets/textures/stone2.png" id="1_p3tmh"]
+[ext_resource type="Texture2D" uid="uid://ygk312j07nq" path="res://assets/textures/stone4.png" id="1_rev86"]
 
 [resource]
 shading_mode = 2
-albedo_texture = ExtResource("1_p3tmh")
+albedo_texture = ExtResource("1_rev86")
 uv1_world_triplanar = true
 texture_filter = 0
